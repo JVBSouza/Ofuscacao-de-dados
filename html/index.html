@@ -3,14 +3,22 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        <title>Site PI Ofuscação de dados</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="">
     </head>
     <body>
-        <div class="header"> </div>
-        <div class="navbar"> </div>
+        <div class="header">
+          <h1>Título do site aqui</h1>
+          <p>Sub texto aqui</p>
+        </div>
+        <div class="navbar">
+            <a href="#" class="active">Home</a>
+            <a href="#">Link</a>
+            <a href="#">Link</a>
+            <a href="#" class="right">Link</a> 
+        </div>
         <div class="corpo"> </div>
         <div class="footer"> </div>
     </body>
@@ -24,8 +32,29 @@ body {
 .header {
   padding: 80px;
   text-align: center;
-  background: #1abc9c;
+  background: #164e43;
   color: white;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+.navbar a:hover{
+  background: green;
 }
 
 </style>
