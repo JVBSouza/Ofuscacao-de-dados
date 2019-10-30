@@ -3,6 +3,10 @@ include 'conecta_sql.php';
 
 $text_array = str_split($_POST["text"]);
 
+// if ($text_array != NULL) {
+//     echo '{"sucesso":"true"}';
+// } 
+
 $blocks = array();
 
 $teste = "";
@@ -25,15 +29,6 @@ foreach ($text_array as $key => $char) {
 //Se achar -> substitui aquele bloco pelo caracter respondente
 //vai ter que ser um for each, então já da pra ir concatenando direto com .= em uma variavel
 
-
-// echo $teste;
-// var_dump($text_array);
-var_dump($blocks);
-echo "<br><br>";
-
-// foreach ($blocks as $char) {
-//     echo $char;
-// }
 $fim = "";
 foreach ($blocks as $key => $str) {
     $sql = "SELECT * FROM percent WHERE valencia ='" . $str . "'";
@@ -51,4 +46,7 @@ foreach ($blocks as $key => $str) {
     $fim .= $str;
 }
 
-echo $fim;
+// echo $fim;
+
+//ajax
+echo '{"sucesso":"true", "traduzido":"' . $fim . '"}';
