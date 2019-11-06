@@ -41,7 +41,7 @@ foreach ($blocks as $key => $str) {
         foreach ($rows as $rs) {
             $char = $rs['bloco'];
         }
-        $str = $char[0];
+        $str = $char;
     }
     $fim .= $str;
 }

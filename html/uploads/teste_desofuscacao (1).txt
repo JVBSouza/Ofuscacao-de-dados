@@ -1,0 +1,15 @@
+Teste Ampersan
+String origem = "&lt;&nbsp;&gt;";
+Resposta: "< >"
+
+PercentTest
+String origem = "%41%6c%6f%5b%5d";
+Resposta: "Alo[]"
+
+charTest
+String origem = "char(65)char(108)char(111)";
+Resposta: "Alo"
+
+misturadoTest
+String origem = "alfa beta &lt;char(65)char(108)char(111)&gt; celta %5btexto%5d delta";
+Resposta: "alfa beta <Alo> celta [texto] delta" 
