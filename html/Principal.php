@@ -17,12 +17,97 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script>
         $(document).ready(function() {
-            $('#bt_traduz').click(function() {
-                fn_traduz_percent();
+            //Botões
+            let frase;
+            $('#bt_string').click(function() {
+                var texto = $('#text').val();
+                fn_traduz_percent(texto);
+                fn_traduz_char(frase);
+                fn_traduz_ampersan(frase);
+                $('#result').html("texto traduzido: " + frase);
             });
 
-            function fn_traduz_percent() {
-                var texto = $('#text').val();
+            $('#bt_file').click(function() {
+                fn_traduz_arq_percent();
+            });
+
+            // Funções
+
+            function fn_traduz_percent(texto) {
+                // var texto = $('#text').val();
+                // alert("antes ajax");
+                $.ajax({
+                    url: 'ler_percent.php',
+                    data: {
+                        text: texto
+                    },
+                    timeout: 1200000,
+                    async: false,
+                    type: 'POST',
+                    dataType: 'json',
+                    success: function(retorno) {
+                        if (retorno.sucesso == 'true') {
+                            // alert(retorno.traduzido);
+                            // $('#result').html("texto traduzido: " + retorno.traduzido);
+                            frase = retorno.traduzido;
+                        } else {
+                            alert('erro');
+                        }
+                    }
+                });
+            }
+
+            function fn_traduz_char(texto) {
+                // var texto = $('#text').val();
+                // alert(texto);
+                $.ajax({
+                    url: 'ler_char.php',
+                    data: {
+                        text: texto
+                    },
+                    timeout: 1200000,
+                    async: false,
+                    type: 'POST',
+                    dataType: 'json',
+                    success: function(retorno) {
+                        if (retorno.sucesso == 'true') {
+                            // alert(retorno.traduzido);
+                            // $('#result').html("texto traduzido: " + retorno.traduzido);
+                            frase = retorno.traduzido;
+                        } else {
+                            alert('erro');
+                        }
+                    }
+                });
+            }
+
+            function fn_traduz_ampersan(texto) {
+                // var texto = $('#text').val();
+                // alert("antes ajax");
+                $.ajax({
+                    url: 'ler_ampersan.php',
+                    data: {
+                        text: texto
+                    },
+                    timeout: 1200000,
+                    async: false,
+                    type: 'POST',
+                    dataType: 'json',
+                    success: function(retorno) {
+                        if (retorno.sucesso == 'true') {
+                            // alert(retorno.traduzido);
+                            // $('#result').html("texto traduzido: " + retorno.traduzido);
+                            alert(frase);
+                            frase = retorno.traduzido;
+                            alert(frase);
+                        } else {
+                            alert('erro');
+                        }
+                    }
+                });
+            }
+
+            function fn_traduz_arq_percent() {
                 // alert("antes ajax");
                 $.ajax({
                     url: 'ler_percent.php',
@@ -64,13 +149,23 @@
             <h3>Descrição da ferramenta</h3>
             <p>texto</p>
         </div>
-        <div class="container-form">
+        <div class="container-form enviar">
             <!-- <form action="ler_percent.php" method="post" name="enviar" id="enviar" enctype="multipart/form-data" target="iframeUpload"> -->
             <div class="form-group">
-                <label for="url">Arquivo:</label>
+                <label for="url">Linha de texto:</label>
                 <input type="text" name="text" class="form-control" id="text" style="width:600px">
             </div>
-            <button type="button" class="btn" id="bt_traduz">Carregar</button>
+            <button type="button" class="btn" id="bt_string">Carregar</button>
+            <!-- </form> -->
+        </div>
+
+        <div class="container-form enviar">
+            <form action="upload.php" method="post" name="enviar" id="enviar" enctype="multipart/form-data" target="iframeUpload">
+            <div class="form-group">
+                <label for="text">Arquivo:</label>
+                <input type="file" name="arq[]" class="form-control" id="arq" style="width:650px">
+            </div>
+            <button type="submit" class="btn" id="bt_file">Carregar</button>
             <!-- </form> -->
         </div>
 
@@ -78,12 +173,12 @@
             <h3>Resultado</h3>
             <input type="text" value='URL traduzida'>
         </div> -->
-
+        
+        <div><span id="result"></span></div>
         <div class="container-resultado">
-            <!-- <iframe name="iframeUpload" id="iframeUpload"></iframe> -->
+            <iframe name="iframeUpload" id="iframeUpload"></iframe>
             <!-- <input type="text" name="text" class="form-control" id="result" style="width:600px"> -->
         </div>
-        <div><span id="result"></span></div>
     </div>
     <div class="footer">
 
@@ -108,16 +203,20 @@
         height: 100%;
     }
 
-    #enviar {
+    .enviar {
         display: flex;
         flex-direction: row;
         height: 100%;
         padding: 5px;
     }
 
+    .btn {
+        margin: 0px 5px;
+    }
+
     #iframeUpload {
-        height: 100px;
-        width: 1200px;
+        height: 500px;
+        width: 780px;
         margin: 10px 10px;
     }
 </style>
