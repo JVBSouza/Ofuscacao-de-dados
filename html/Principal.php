@@ -27,9 +27,9 @@
                 $('#result').html("texto traduzido: " + frase);
             });
 
-            $('#bt_file').click(function() {
-                fn_traduz_arq_percent();
-            });
+            // $('#bt_file').click(function() {
+            //     fn_traduz_arq_percent();
+            // });
 
             // Funções
 
