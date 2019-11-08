@@ -9,7 +9,7 @@ $text_array = str_split($_POST["text"]);
 
 $blocks = array();
 
-$teste = "";
+// $teste = "";
 $code = 0;
 foreach ($text_array as $key => $char) {
     if ($char != "%" && $code <= 0) {

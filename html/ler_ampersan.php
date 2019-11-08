@@ -30,8 +30,6 @@ foreach ($text_array as $key => $value) {
 }
 array_push($blocks,$word);
 
-var_dump($blocks);
-
 $fim = "";
 foreach ($blocks as $key => $str) {
     $sql = "SELECT * FROM ampersan WHERE valencia ='" . $str . "'";
