@@ -28,7 +28,7 @@ body {
   }
   
   .navbar a:hover{
-    background: green;
+    background: rgb(165, 177, 165);
   }
 
   .active {

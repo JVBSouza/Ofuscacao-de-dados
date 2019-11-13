@@ -135,19 +135,20 @@
 
 <body>
     <div class="header">
-        <h1>Título do site aqui</h1>
-        <p>Sub texto aqui</p>
+        <h1>Desofuscador de dados</h1>
+        <p> Segurança acima de tudo</p>
     </div>
     <div class="navbar">
         <a href="index.html">Home</a>
-        <a href="Principal.html" class="active">Principal</a>
+        <a href="Principal.php" class="active">Principal</a>
         <a href="sobre.html">Sobre</a>
-        <a href="contato.html" class="right">contato</a>
+        <a href="contato.html" class="right">Contato</a>
     </div>
     <div class="corpo">
         <div class="desc">
-            <h3>Descrição da ferramenta</h3>
-            <p>texto</p>
+            <h3>Desofuscador</h3>
+            <p>Esta plataforma torna legível logs de servidores Web que sofrem ataque de
+ofuscamento em suas URL's</p>
         </div>
         <div class="container-form enviar">
             <!-- <form action="ler_percent.php" method="post" name="enviar" id="enviar" enctype="multipart/form-data" target="iframeUpload"> -->
@@ -195,6 +196,10 @@
 
     .desc {
         padding: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
     }
 
     .body {
