@@ -1,0 +1,38 @@
+body {
+  font-family: 'Raleway', sans-serif;
+  color:#fff;
+  background-image: url(../../img/2.jpg);
+}
+
+.jumbotron {
+    height: 100%;
+    text-align: center;
+    border-radius: 0 !important;
+    color: white;
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+    background-color: #000000ab !important;
+}
+
+.btn-ofuscador {
+    background-color: transparent !important;
+    border-color: white !important;
+    border-radius: 14px !important;
+    padding: 8px !important;
+    width: 150px !important;
+    transition: color 1s !important;
+    transition: background-color 2s !important;
+}
+
+.btn:hover{
+  background-color: white !important;
+  color:black !important;
+
+}
+
+iframe {
+    width: 100% !important;
+    background-color: #000000b8;
+    border-radius: 13px;
+    border: solid 3px #2db7e061;
+}
