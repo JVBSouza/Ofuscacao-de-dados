@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 30-Out-2019 às 01:10
--- Versão do servidor: 10.4.6-MariaDB
--- versão do PHP: 7.3.8
+-- Generation Time: 26-Nov-2019 às 23:51
+-- Versão do servidor: 10.1.28-MariaDB
+-- PHP Version: 7.1.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,10 +19,11 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `ofuscadb`
+-- Database: `ofuscadb`
 --
-CREATE DATABASE IF NOT EXISTS `ofuscadb` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `ofuscadb`;
+DROP DATABASE IF EXISTS `ofuscadbjr`;
+CREATE DATABASE IF NOT EXISTS `ofuscadbjr` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `ofuscadbjr`;
 
 -- --------------------------------------------------------
 
@@ -512,45 +513,45 @@ INSERT INTO `percent` (`id`, `bloco`, `valencia`) VALUES
 (96, '~', '%7e');
 
 --
--- Índices para tabelas despejadas
+-- Indexes for dumped tables
 --
 
 --
--- Índices para tabela `ampersan`
+-- Indexes for table `ampersan`
 --
 ALTER TABLE `ampersan`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `char_code`
+-- Indexes for table `char_code`
 --
 ALTER TABLE `char_code`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `percent`
+-- Indexes for table `percent`
 --
 ALTER TABLE `percent`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT de tabelas despejadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de tabela `ampersan`
+-- AUTO_INCREMENT for table `ampersan`
 --
 ALTER TABLE `ampersan`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=244;
 
 --
--- AUTO_INCREMENT de tabela `char_code`
+-- AUTO_INCREMENT for table `char_code`
 --
 ALTER TABLE `char_code`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=96;
 
 --
--- AUTO_INCREMENT de tabela `percent`
+-- AUTO_INCREMENT for table `percent`
 --
 ALTER TABLE `percent`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=97;

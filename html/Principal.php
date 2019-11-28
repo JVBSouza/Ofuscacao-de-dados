@@ -24,7 +24,7 @@
                 fn_traduz_percent(texto);
                 fn_traduz_char(frase);
                 fn_traduz_ampersan(frase);
-                $('#result').html("texto traduzido: " + frase);
+                $('#result').html("Texto traduzido: " + frase);
             });
 
             // Funções
@@ -117,7 +117,7 @@
                     success: function(retorno) {
                         if (retorno.sucesso == 'true') {
                             // alert(retorno.traduzido);
-                            $('#result').html("texto traduzido: " + retorno.traduzido);
+                            $('#result').html("Texto traduzido: " + retorno.traduzido);
                         } else {
                             alert('erro');
                         }

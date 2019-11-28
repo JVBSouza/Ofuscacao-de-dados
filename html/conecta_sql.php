@@ -1,5 +1,5 @@
 <?php
-$dsn = "mysql:dbname=ofuscadb;host=localhost";
+$dsn = "mysql:dbname=ofuscadbjr;host=localhost";
 $usr = "root";
 $senha = "";
 try{
