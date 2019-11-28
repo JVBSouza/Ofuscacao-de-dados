@@ -197,6 +197,7 @@ foreach ($lines_translated_char as $key => $value) {
 // echo "</pre>";
 
 $handle = fopen("file2.txt", "w");
+fwrite($handle, pack("CCC",0xef,0xbb,0xbf));
 
 foreach ($lines_translated_ampersan as $key => $value) {
     fwrite($handle, $value);
